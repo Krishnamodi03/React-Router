@@ -28,7 +28,7 @@ const Register = () => {
   };
 
   return (
-    <div className="h-[60vh] w-[60vw] flex border-3 border-[#fff783] rounded-2xl">
+    <div className="h-[50vh] w-[50vw] flex border-3 border-[#fff783] rounded-2xl">
       <div className="w-2/5 flex items-center justify-center backdrop-blur-md bg-[#fdf16d62] rounded-l-2xl">
         <img src="./public/login_register_Image.png" alt="" className="h-[300px]" />
       </div>
