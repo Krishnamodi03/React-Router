@@ -7,11 +7,11 @@ const App = () => {
   let router = createBrowserRouter([
     {
       path: '/',
-      element: <Login/>
+      element: <Login />
     },
     {
       path: '/register',
-      element: <Register/>
+      element: <Register />
     }
   ])
   return (
