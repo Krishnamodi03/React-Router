@@ -2,6 +2,8 @@ import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
+import { Provider } from "react-redux"
+import Store from './redux/Store'
 
 const App = () => {
   let router = createBrowserRouter([
@@ -15,7 +17,9 @@ const App = () => {
     }
   ])
   return (
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={Store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   )
 }
 

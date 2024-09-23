@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FaMusic } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { registerUser } from './redux/Actions';
 
 const Register = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -19,6 +22,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(registerdata);
+    dispatch(registerUser(registerdata))
     handleNavigate();
   };
 

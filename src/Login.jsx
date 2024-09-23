@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import { FaMusic } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { loginUser } from './redux/Actions';
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [logindata, setlogindata] = useState({
     email: '',
     password: ''
   });
 
+  const user = useSelector((state) => state.user);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(logindata);
+    dispatch(loginUser(logindata));
+    const isLoggedIn = useSelector((state) => state.isLoggedIn)
+    if (isLoggedIn) {
+      console.log("Login successful")
+      alert("Login successful")
+    } else {
+      console.log("Login failed!!... \nInvalid credentials")
+      alert("Login failed!!... \nInvalid credentials")
+    }
   };
 
   const handleChange = (e) => {
