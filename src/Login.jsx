@@ -12,10 +12,11 @@ const Login = () => {
   });
 
   const user = useSelector((state) => state.user);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(logindata));
-    const isLoggedIn = useSelector((state) => state.isLoggedIn)
     if (isLoggedIn) {
       console.log("Login successful")
       alert("Login successful")
